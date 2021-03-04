@@ -186,3 +186,27 @@ object Director {
 // val director1 = Director("Jose", "Perez", 1998)
 // val director2 = Director("Pablo", "Gonzalez", 1995)
 // Director.esMayor(director1, director2)
+
+
+object Pelicula {
+
+ def apply(nombre: String, presentacion: Int, rangoIMDB: Double, director: Director): Pelicula =
+  new Pelicula(nombre, presentacion, rangoIMDB, director)
+
+ def mejorCalificada(pelicula1: Pelicula, pelicula2: Pelicula): Pelicula = {
+  if (pelicula1.rangoIMDB > pelicula2.rangoIMDB) pelicula1 else pelicula2
+ }
+
+ def mayorDirectorEnElTiempo(pelicula1: Pelicula, pelicula2: Pelicula): Director = {
+  if (pelicula1.directorEdad > pelicula2.directorEdad) pelicula1.director else pelicula2.director
+ } 
+   
+}
+
+// val director1 = Director("Jose", "Perez", 1990)
+// val director2 = Director("Pablo", "Gonzalez", 1980)
+// val pelicula1 = Pelicula("Titanic", 2015, 4.5, director1)
+// val pelicula2 = Pelicula("La guerra de los mundos", 2015, 3.7, director2)
+// Pelicula.mejorCalificada(pelicula1, pelicula2)
+// Pelicula.mejorCalificada(pelicula1, pelicula2).nombre
+// Pelicula.mayorDirectorEnElTiempo(pelicula1, pelicula2).nombre
