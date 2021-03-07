@@ -1,7 +1,12 @@
-package lists
+package co.s4n.lists
 
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
+
+/**
+  * Tests del taller de tipos de datos inmutables - Listas
+  * @author Alex Montoya Franco
+  */
 
 class LengthSpec extends AnyFlatSpec with Matchers {
   "De una lista con true, false, true, true la funcion length" should "debe dar 4" in {
@@ -35,12 +40,10 @@ class Ejercicio2TailSpec extends AnyFlatSpec with Matchers {
   val lst = List(1,2,3)
   List.tail(lst) shouldEqual List(2,3)
   }
-
   "De una lista con Hello,World,Again la funcion tail" should "debe dar World,Again" in {
   val lst = List("Hello","World","Again")
   List.tail(lst) shouldEqual List("World","Again")
   }
-
 }
 
 class Ejercicio3HeadSpec extends AnyFlatSpec with Matchers {
@@ -48,17 +51,10 @@ class Ejercicio3HeadSpec extends AnyFlatSpec with Matchers {
   val lst = List(1,2,3)
   List.head(lst) shouldEqual 1
   }
-
   "De una lista con Hello,World,Again la funcion head" should "debe dar Hello" in {
   val lst = List("Hello","World","Again")
   List.head(lst) shouldEqual "Hello"
   }
-
-  "De una lista vacia la funcion head" should "debe dar Empty List" in {
-  val lst = List()
-  List.head(lst) shouldEqual "Empty List"
-  }
-
 }
 
 class Ejercicio4AndSpec extends AnyFlatSpec with Matchers {
@@ -66,17 +62,10 @@ class Ejercicio4AndSpec extends AnyFlatSpec with Matchers {
   val lst = List(true, true, true)
   List.and(lst) shouldEqual true
   }
-
   "De una lista con true, false, true la funcion and" should "debe dar false" in {
   val lst = List(true, false, true)
   List.and(lst) shouldEqual false
   }
-
-  "De una lista con true, false, true la funcion and2" should "debe dar false" in {
-  val lst = List(true, false, true)
-  List.and2(lst) shouldEqual false
-  }
-
 }
 
 class Ejercicio5OrSpec extends AnyFlatSpec with Matchers {
@@ -84,17 +73,10 @@ class Ejercicio5OrSpec extends AnyFlatSpec with Matchers {
   val lst = List(false, false, false)
   List.or(lst) shouldEqual false
   }
-
   "De una lista con true, false, true la funcion or" should "debe dar true" in {
   val lst = List(true, false, true)
   List.or(lst) shouldEqual true
   }
-
-  "De una lista con true, false, true la funcion or2" should "debe dar true" in {
-  val lst = List(true, false, true)
-  List.or2(lst) shouldEqual true
-  }
-
 }
 
 class Ejercicio6MaxSpec extends AnyFlatSpec with Matchers {
@@ -102,17 +84,14 @@ class Ejercicio6MaxSpec extends AnyFlatSpec with Matchers {
   val lst = List(3,8,1)
   List.max(lst) shouldEqual 8
   }
-
   "De una lista con 5,-2,9  la funcion max" should "debe dar 9" in {
   val lst = List(5,-2,9)
   List.max(lst) shouldEqual 9
   }
-
  "De una lista con -8,-19,-1  la funcion max" should "debe dar -1" in {
   val lst = List(-8,-19,-1)
   List.max(lst) shouldEqual -1
   }
-
 }
 
 class Ejercicio7MinSpec extends AnyFlatSpec with Matchers {
@@ -120,17 +99,14 @@ class Ejercicio7MinSpec extends AnyFlatSpec with Matchers {
   val lst = List(3L,8L,1L)
   List.min(lst) shouldEqual 1
   }
-
   "De una lista con 5,-2,9  la funcion min" should "debe dar -2" in {
   val lst = List(5L,-2L,9L)
   List.min(lst) shouldEqual -2
   }
-
  "De una lista con -8,-19,-1  la funcion min" should "debe dar -19" in {
   val lst = List(-8L,-19L,-1L)
   List.min(lst) shouldEqual -19
   }
-
 }
 
 class Ejercicio8MinMaxSpec extends AnyFlatSpec with Matchers {
@@ -138,20 +114,16 @@ class Ejercicio8MinMaxSpec extends AnyFlatSpec with Matchers {
   val lst = List(3.0,8.0,1.0)
   List.minMax(lst) shouldEqual (1,8)
   }
-
   "De una lista con 5,-2,9  la funcion minMax" should "debe dar (-2,9)" in {
   val lst = List(5.0,-2.0,9.0)
   List.minMax(lst) shouldEqual (-2,9)
   }
-
  "De una lista con -8,-19,-1  la funcion minMax" should "debe dar (-19,-1)" in {
   val lst = List(-8.0,-19.0,-1.0)
   List.minMax(lst) shouldEqual (-19,-1)
   }
-
   "De una lista con 3,0,7,-3,5,18,1  la funcion minMax" should "debe dar (-3,18)" in {
   val lst = List(3.0, 0.0, 7.0, -3.0, 5.0, 18.0, 1.0)
   List.minMax(lst) shouldEqual (-3,18)
   }
-
 }
